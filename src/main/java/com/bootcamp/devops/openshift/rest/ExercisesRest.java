@@ -23,10 +23,9 @@ public class ExercisesRest {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "ejercicio_2")
-    public String exerciseTwo(@RequestParam String path) throws IOException {
+    public String exerciseTwo() throws IOException {
         String result;
-        if (path.equalsIgnoreCase("/opt/ejercicio_2/configmap")
-                && new String(Files.readAllBytes(Paths.get(path))).equalsIgnoreCase("ok")) {
+        if (new String(Files.readAllBytes(Paths.get("/opt/ejercicio_2/configmap"))).equalsIgnoreCase("ok")) {
             result = "Solución correcta";
         } else {
             result = "Solución incorrecta";
@@ -47,10 +46,9 @@ public class ExercisesRest {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "ejercicio_4")
-    public String exerciseFour(@RequestParam String path) throws IOException {
+    public String exerciseFour() throws IOException {
         String result;
-        if (path.equalsIgnoreCase("/opt/ejercicio_4/secret")
-                && new String(Files.readAllBytes(Paths.get(path))).equalsIgnoreCase("ok")) {
+        if (new String(Files.readAllBytes(Paths.get("/opt/ejercicio_4/secret"))).equalsIgnoreCase("ok")) {
             result = "Solución correcta";
         } else {
             result = "Solución incorrecta";
