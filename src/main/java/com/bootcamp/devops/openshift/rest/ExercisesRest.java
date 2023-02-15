@@ -12,9 +12,9 @@ import java.nio.file.Paths;
 public class ExercisesRest {
 
     @RequestMapping(method = RequestMethod.GET, value = "ejercicio_1")
-    public String exerciseOne(@RequestParam String data) {
+    public String exerciseOne() {
         String result;
-        if (data.equalsIgnoreCase("ejercicio_1") && System.getenv(data).equalsIgnoreCase("ok")) {
+        if (System.getenv("ejercicio_1").equalsIgnoreCase("ok")) {
             result = "Solución correcta";
         } else {
             result = "Solución incorrecta";
@@ -36,9 +36,9 @@ public class ExercisesRest {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "ejercicio_3")
-    public String exerciseThree(@RequestParam String data) {
+    public String exerciseThree() {
         String result;
-        if (data.equalsIgnoreCase("ejercicio_3") && System.getenv(data).equalsIgnoreCase("ok")) {
+        if (System.getenv("ejercicio_3").equalsIgnoreCase("ok")) {
             result = "Solución correcta";
         } else {
             result = "Solución incorrecta";
